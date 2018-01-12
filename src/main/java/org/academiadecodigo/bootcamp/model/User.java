@@ -1,9 +1,22 @@
 package org.academiadecodigo.bootcamp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "user")
+
 public class User {
+
+    @Id
+    private Integer id;
 
     private String username;
     private String email;
+
+    @Transient
     private String password;
 
     public String getUsername() {

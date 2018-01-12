@@ -11,7 +11,13 @@ import javax.persistence.criteria.Root;
 
 public class JpaUserService implements UserService{
 
+    public JpaUserService(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
     private EntityManagerFactory emf;
+
+
 
 
 
@@ -30,11 +36,6 @@ public class JpaUserService implements UserService{
     @Override
     public void addUser(User user) {
 
-        EntityManager em = emf.createEntityManager();
-
-        try {
-
-        }
 
     }
 
@@ -52,7 +53,7 @@ public class JpaUserService implements UserService{
 
         criteriaQuery.select(root);
 
-        criteriaQuery.where(builder.equal(root.get("name)"), username));
+        criteriaQuery.where(builder.equal(root.get("user_name"), username));
 
         return em.createQuery(criteriaQuery).getSingleResult();
 
@@ -60,13 +61,9 @@ public class JpaUserService implements UserService{
         if (em !=null){
             em.close();
         }
-
+        return null;
     }
 
-
-
-
-        return null;
     }
 
     @Override
