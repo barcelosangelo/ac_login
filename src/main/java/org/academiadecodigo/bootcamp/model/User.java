@@ -1,26 +1,32 @@
 package org.academiadecodigo.bootcamp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+
     private String username;
+
     private String email;
 
-    @Transient
+
     private String password;
 
-    public String getUsername() {
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
         return username;
     }
 
@@ -41,7 +47,6 @@ public class User {
     }
 
     public void setPassword(String password) {
-
         this.password = password;
     }
 
@@ -49,6 +54,9 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public User() {
     }
 
     @Override
