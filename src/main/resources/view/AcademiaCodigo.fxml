@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.Page2Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Button fx:id="btnOK" layoutX="582.0" layoutY="328.0" mnemonicParsing="false" text="OK" />
+            <Button id="btnPrev" fx:id="btnPrev" layoutX="536.0" layoutY="328.0" mnemonicParsing="false" onAction="#back" text="Prev" />
+            <Accordion layoutX="95.0" layoutY="78.0" prefHeight="130.0" prefWidth="150.0" />
+            <TabPane prefHeight="328.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="BootCamps">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="64.0" layoutY="45.0" prefHeight="200.0" prefWidth="512.0">
+                                <columns>
+                                  <TableColumn fx:id="id" prefWidth="45.0" text="ID" />
+                                  <TableColumn fx:id="location" prefWidth="262.0" text="Location" />
+                                    <TableColumn fx:id="startDate" prefWidth="105.0" text="Start Date" />
+                                    <TableColumn fx:id="endDate" prefWidth="99.0" text="End Date" />
+                                </columns>
+                              </TableView>
+                              <ScrollBar layoutX="576.0" layoutY="45.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="6.0" />
+                              <ScrollBar layoutX="65.0" layoutY="245.0" prefHeight="17.0" prefWidth="511.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="BootCamp Details">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="14.0" layoutY="76.0" prefHeight="200.0" prefWidth="614.0">
+                                <columns>
+                                  <TableColumn fx:id="name" prefWidth="93.0" text="Name" />
+                                  <TableColumn fx:id="gender" minWidth="0.0" prefWidth="54.0" text="Gender" />
+                                    <TableColumn fx:id="address" prefWidth="78.0" text="Address" />
+                                    <TableColumn fx:id="city" prefWidth="114.0" text="City" />
+                                    <TableColumn fx:id="phone" prefWidth="74.0" text="Phone" />
+                                    <TableColumn fx:id="birthdate" text="Birthdate" />
+                                    <TableColumn fx:id="bootcamp" prefWidth="93.0" text="BootCamp" />
+                                </columns>
+                              </TableView>
+                              <ScrollBar layoutX="14.0" layoutY="276.0" prefHeight="17.0" prefWidth="606.0" />
+                              <ScrollBar layoutX="620.0" layoutY="76.0" orientation="VERTICAL" prefHeight="199.0" prefWidth="17.0" />
+                              <Label layoutX="76.0" layoutY="14.0" text="ID:" />
+                              <Label layoutX="36.0" layoutY="31.0" text="Location:" />
+                              <Label layoutX="243.0" layoutY="31.0" text="Start Date:" />
+                              <Label layoutX="391.0" layoutY="31.0" text="End Date:" />
+                              <Label fx:id="bootcampID" layoutX="105.0" layoutY="14.0" text="Id" />
+                              <Label fx:id="location1" layoutX="100.0" layoutY="31.0" text="Location" />
+                              <Label fx:id="startDate1" layoutX="310.0" layoutY="31.0" text="StardDate" />
+                              <Label fx:id="endDate1" layoutX="451.0" layoutY="31.0" text="endDate" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text=" Cadet Details">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
