@@ -33,6 +33,9 @@ public class Main extends Application {
     public void init() {
 
         emf = Persistence.createEntityManagerFactory("app");
+        ServiceRegistry.getServiceRegistry().registerService(UserService.class.getSimpleName(), userService);
+        ServiceRegistry.getServiceRegistry().registerService(BootcampService.class.getSimpleName(), bootcampService);
+
 
     }
 
@@ -45,7 +48,6 @@ public class Main extends Application {
 
         LoginController loginController = (LoginController)Navigation.getInstance().getController("login");
         loginController.setUserService(userService);
-
 
 
 
